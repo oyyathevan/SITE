@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <title>Mr. S. Oyyathevan – Personal Webpage</title>
 
   <!-- Bootstrap CSS -->
@@ -10,23 +10,25 @@
 
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: #f5f7fa;
       color: #333;
       line-height: 1.6;
+      margin: 0;
     }
     header {
       background: linear-gradient(135deg, #2a4d69, #d90429, #ffb20f);
       color: #fff;
-      padding: 80px 20px;
+      padding: clamp(40px, 10vw, 60px) 20px;
       text-align: center;
     }
     header h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(1.8rem, 4.5vw, 2.5rem);
       font-weight: 700;
+      margin-bottom: 10px;
     }
     header p {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     }
     nav {
       background: #1b263b;
@@ -35,12 +37,12 @@
     .navbar-nav .nav-link {
       color: #fff !important;
       font-weight: 500;
-      padding: 10px 15px;
+      padding: 8px 12px;
       transition: color 0.3s, transform 0.3s;
     }
     .navbar-nav .nav-link:hover {
-      color: #ffb20f !important hospan>
-      transform: scale(0.95);
+      color: #ffb20f !important;
+      transform: scale(0.98);
     }
     a {
       text-decoration: none !important;
@@ -49,13 +51,14 @@
     }
     a:hover {
       color: #d90429;
-      transform: scale(0.95);
+      transform: scale(0.98);
     }
     .subject-card {
       transition: transform 0.3s, box-shadow 0.3s;
       border: none;
       border-radius: 10px;
       background: #fff;
+      padding: 15px;
     }
     .subject-card:hover {
       transform: translateY(-5px);
@@ -64,10 +67,15 @@
     .subject-card h5 {
       color: #1b263b;
       font-weight: 600;
+      font-size: clamp(1.1rem, 3vw, 1.25rem);
     }
     .subject-card ul {
       list-style: none;
       padding: 0;
+      margin: 0;
+    }
+    .subject-card ul li {
+      margin-bottom: 8px;
     }
     .subject-card ul li::before {
       content: "➜ ";
@@ -77,7 +85,7 @@
     .unit-links {
       display: inline-flex;
       flex-wrap: wrap;
-      gap: 5px;
+      gap: 8px;
       align-items: center;
     }
     .unit-links a::before {
@@ -89,42 +97,72 @@
       margin-right: 5px;
     }
     section {
-      padding: 60px 0;
+      padding: clamp(30px, 8vw, 50px) 0;
     }
     h2 {
       color: #1b263b;
       font-weight: 700;
-      margin-bottom: 30px;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      margin-bottom: 20px;
+      text-align: center;
     }
     .card {
       border: none;
       border-radius: 10px;
       background: #fff;
-      padding: 20px;
+      padding: 15px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     footer {
       background: #1b263b;
       color: #fff;
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 15px;
+      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
     }
+    /* Enhanced Mobile Responsiveness */
     @media (max-width: 768px) {
       header {
-        padding: 50px 15px;
+        padding: 30px 15px;
+      }
+      .navbar-nav {
+        text-align: center;
+      }
+      .navbar-nav .nav-link {
+        padding: 10px;
+        font-size: 1rem;
       }
       .subject-card {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
       }
       .unit-links {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 5px;
+        gap: 6px;
       }
       .unit-links a:not(:last-child)::after {
         content: none;
+      }
+      section {
+        padding: 20px 10px;
+      }
+      .card {
+        padding: 12px;
+      }
+    }
+    @media (max-width: 576px) {
+      header h1 {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+      }
+      header p {
+        font-size: clamp(0.8rem, 3vw, 0.95rem);
+      }
+      h2 {
+        font-size: clamp(1.25rem, 5vw, 1.5rem);
+      }
+      .subject-card h5 {
+        font-size: clamp(1rem, 3.5vw, 1.15rem);
       }
     }
   </style>
@@ -182,7 +220,7 @@
     <div class="row g-4">
       <!-- Data Warehousing & Data Mining -->
       <div class="col-12">
-        <div class="card subject-card p-3">
+        <div class="card subject-card">
           <h5>DATA WAREHOUSING & DATA MINING | 23CTCTT5010</h5>
           <ul>
             <li><a href="materials/datamining_syllabus.pdf">Syllabus</a></li>
@@ -232,7 +270,7 @@
       </div>
       <!-- Data Science -->
       <div class="col-12">
-        <div class="card subject-card p-3">
+        <div class="card subject-card">
           <h5>Data Science</h5>
           <ul>
             <li><a href="materials/datascience_notes.pdf">Lecture Notes</a></li>
@@ -244,7 +282,7 @@
       </div>
       <!-- IoT -->
       <div class="col-12">
-        <div class="card subject-card p-3">
+        <div class="card subject-card">
           <h5>Internet of Things (IoT)</h5>
           <ul>
             <li><a href="materials/iot_notes.pdf">Lecture Notes</a></li>
